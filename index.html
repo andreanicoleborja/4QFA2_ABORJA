@@ -17,28 +17,28 @@
 
 <h2>Multiplication Generator Table</h2>
 <p> Enter numbers between 2 and 10</p>
-<input type="number" id="beginValue" placeholder="Number of Rows">
+<input type="number" id="beginValue" placeholder="Number of Columns">
 <p>by</p>
-<input type="number" id="endValue" placeholder="Number of Columns"><br><br>
+<input type="number" id="endValue" placeholder="Number of Rows"><br><br>
 <button onclick="generateTable()">Click when you are ready!</button><br><br>
 
 <div id="multiplicationTable"></div>
 
 <script>
 function generateTable() {
-    var numRows = parseInt(document.getElementById("beginValue").value);
-    var numColumns = parseInt(document.getElementById("endValue").value);
+    var numColumns = parseInt(document.getElementById("beginValue").value);
+    var numRows = parseInt(document.getElementById("endValue").value);
     var table = "";
 
-    if (isNaN(numRows) || isNaN(numColumns) || numRows < 2 || numRows > 10 || numColumns < 2 || numColumns > 10) {
+    if (isNaN(numColumns) || isNaN(numRows) || numRows < 2 || numRows > 10 || numColumns < 2 || numColumns > 10) {
         alert("Please enter numbers between 2 and 10");
         return;
     }
 
     table += "<table>";
-    for (var i = 1; i <= numRows; i++) {
+    for (var i = 1; i <= numColumns; i++) {
         table += "<tr>";
-        for (var j = 1; j <= numColumns; j++) {
+        for (var j = 1; j <= numRows; j++) {
             table += "<td>" + (i * j) + "</td>";
         }
         table += "</tr>";
